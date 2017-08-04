@@ -6,6 +6,27 @@ using System.Threading.Tasks;
 
 namespace ExplicitVsImplicitInterface
 {
+    public abstract class A
+    {
+
+        private string data;
+
+        protected A(string myString)
+        {
+            data = myString;
+        }
+
+    }
+
+    public class B : A
+    {
+
+        public B(string myString) : base(myString)
+        {
+            Console.WriteLine("My String: {0}", myString);
+        }
+
+    }
     //interface Iinterface_1
     //{
 
@@ -102,6 +123,7 @@ namespace ExplicitVsImplicitInterface
         {
             Class1 objClass1 = new Class1();
             objClass1.Display();
+            var objB = new B(@"mystring");
             //objClass1.interface1_method();
             //var objIiterface1 = (objClass1) as Iinterface_1;
             //objClass1.interface1_method();
